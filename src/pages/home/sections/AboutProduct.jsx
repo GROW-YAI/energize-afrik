@@ -7,9 +7,11 @@ import {
   RiGlobalLine,
 } from "react-icons/ri";
 
-import Img1 from "../../../assets/images/hero1.webp";
-import Img2 from "../../../assets/images/hero2.webp";
-import Img3 from "../../../assets/images/hero3.webp";
+import newImg from "../../../assets/images/hero1.avif";
+
+import Img1 from "../../../assets/images/showcase3.webp";
+import Img2 from "../../../assets/images/showcase1.webp";
+import Img3 from "../../../assets/images/showcase2.webp";
 import { COMPANY_DATA } from "../../../constants/placeholder";
 
 const AboutProduct = () => {
@@ -130,7 +132,7 @@ const AboutProduct = () => {
     <div className="bg-gray-950" ref={containerRef}>
       {/* Hero Section */}
       <motion.section
-        className="h-screen flex flex-col items-center justify-center relative overflow-hidden"
+        className="py-10 flex flex-col items-center justify-center relative overflow-hidden"
         style={{ opacity: heroOpacity, scale: heroScale }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-amber-900/20 to-gray-950 z-0"></div>
@@ -167,7 +169,7 @@ const AboutProduct = () => {
             transition={{ delay: 0.6, duration: 0.8 }}
           >
             <img
-              src={Img1}
+              src={newImg}
               alt="Solar Power Bank for Rural Ghana"
               className="w-full h-auto object-cover rounded-3xl shadow-2xl"
             />

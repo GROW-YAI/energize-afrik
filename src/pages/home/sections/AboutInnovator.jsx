@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import Innovator from "../../../assets/images/innovator.webp";
+import Innovator from "../../../assets/images/innovator.jpg";
+import InnovationTimeline from "./InnovationTimeline"; // Import the new timeline component
 
 const AboutInnovator = () => {
   const sectionRef = useRef(null);
@@ -35,34 +36,6 @@ const AboutInnovator = () => {
     [60, 0, 0, -60]
   );
 
-  // Timeline data
-  const milestones = [
-    {
-      year: "2020",
-      title: "The Beginning",
-      description:
-        "First prototype of the solar power bank created in Bodomase.",
-    },
-    {
-      year: "2021",
-      title: "Solar Irrigation",
-      description:
-        "Developed solar-powered water pump for farmers in rural Ashanti Region.",
-    },
-    {
-      year: "2022",
-      title: "Community Impact",
-      description:
-        "Helped 50+ households access reliable electricity for essential appliances.",
-    },
-    {
-      year: "2023",
-      title: "Expansion Vision",
-      description:
-        "Started developing plans for larger solar stations to power cars and heavy equipment.",
-    },
-  ];
-
   // Modal content
   const modalContent = {
     vision: {
@@ -96,7 +69,7 @@ const AboutInnovator = () => {
 
   return (
     <div
-      className=" relative bg-gradient-to-br from-amber-50 to-white overflow-hidden"
+      className="relative bg-gradient-to-br from-amber-50 to-white overflow-hidden"
       ref={sectionRef}
     >
       {/* Background pattern */}
@@ -282,79 +255,8 @@ const AboutInnovator = () => {
           </motion.div>
         </div>
 
-        {/* Innovation Timeline */}
-        <div className="mb-24">
-          <motion.h3
-            className="text-3xl font-bold text-center text-gray-900 mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={shouldShow ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 0.3 }}
-          >
-            The Innovation Journey
-          </motion.h3>
-
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-amber-400 to-blue-400"></div>
-
-            <div className="space-y-16">
-              {milestones.map((milestone, index) => (
-                <motion.div
-                  key={index}
-                  className={`relative flex items-center ${
-                    index % 2 === 0
-                      ? "justify-start md:justify-end"
-                      : "justify-end md:justify-start"
-                  }`}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={
-                    shouldShow ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
-                  }
-                  transition={{ delay: 0.3 + index * 0.1 }}
-                >
-                  {/* Content */}
-                  <div
-                    className={`w-full md:w-5/12 ${
-                      index % 2 === 0 ? "md:pr-8" : "md:pl-8"
-                    }`}
-                  >
-                    <motion.div
-                      className="bg-white p-6 rounded-xl shadow-lg border border-gray-100"
-                      whileHover={{
-                        y: -5,
-                        boxShadow:
-                          "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-                      }}
-                    >
-                      <div className="flex items-center mb-3">
-                        <span
-                          className={`text-sm font-semibold px-3 py-1 rounded-full ${
-                            index % 4 === 0
-                              ? "bg-amber-100 text-amber-800"
-                              : index % 4 === 1
-                              ? "bg-blue-100 text-blue-800"
-                              : index % 4 === 2
-                              ? "bg-emerald-100 text-emerald-800"
-                              : "bg-purple-100 text-purple-800"
-                          }`}
-                        >
-                          {milestone.year}
-                        </span>
-                      </div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-2">
-                        {milestone.title}
-                      </h4>
-                      <p className="text-gray-600">{milestone.description}</p>
-                    </motion.div>
-                  </div>
-
-                  {/* Timeline dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-amber-400 z-10"></div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
+        {/* Replace the old Innovation Timeline with the new component */}
+        <InnovationTimeline shouldShow={shouldShow} />
 
         {/* Values and Philosophy */}
         <motion.div
@@ -485,7 +387,7 @@ const AboutInnovator = () => {
           </div>
         </motion.div>
 
-        {/* Connect with Innovator */}
+        {/* Connect with Innovator / Partner With Us */}
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 30 }}
