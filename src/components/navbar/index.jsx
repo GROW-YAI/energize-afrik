@@ -129,7 +129,7 @@ const Navbar = () => {
                 <FaSun />
               </div>
               <span className="font-bold text-xl text-gray-800">
-                Energize-Afrik
+                EnergizAfriq
               </span>
             </a>
 
