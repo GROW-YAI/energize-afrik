@@ -1,1 +1,62 @@
 @import "tailwindcss";
+
+@theme {
+  --color-mint-500: oklch(0.72 0.11 178);
+
+  /* Primary Colors (Inspired by the Sun - Energy & Innovation) */
+  --color-primary-main: oklch(0.85 0.23 75); /* Bright Solar Yellow */
+  --color-primary-dark: oklch(0.7 0.25 75); /* Deeper Golden Orange */
+  --color-primary-light: oklch(0.95 0.18 75); /* Soft Sunlit Yellow */
+
+  /* Secondary Colors (Agriculture & Sustainability) */
+  --color-secondary-main: oklch(0.65 0.2 145); /* Fresh Green */
+  --color-secondary-dark: oklch(0.5 0.22 145); /* Deeper Eco Green */
+  --color-secondary-light: oklch(0.8 0.18 145); /* Soft Green Tint */
+
+  /* Background & Neutral Shades */
+  --color-background: oklch(0.98 0.01 90); /* Light Eco White */
+  --color-text-main: oklch(0.15 0.02 90); /* Dark Gray for Readability */
+  --color-text-secondary: oklch(0.35 0.03 90); /* Medium Gray */
+
+  /* Fonts */
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --font-poppins: Poppins, sans-serif;
+
+  /* Extended Theme */
+  --color-brown-800: #3a2518;
+  --color-brown-900: #2a1a10;
+
+  /* Animations */
+  --animation-spin-slow: spin 8s linear infinite;
+  --animation-pulse: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animation-bounce: bounce 3s infinite;
+  --animation-fadeIn: fadeIn 1s ease-in;
+  --animation-count: count 2s ease-out;
+
+  /* Keyframes */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes count {
+    0% {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
