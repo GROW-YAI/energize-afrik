@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap");
+
 * {
   scroll-behavior: smooth;
 }
@@ -227,4 +233,39 @@
   50% {
     scale: 1.2;
   }
+}
+
+/* Font Usage Examples */
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-5xl);
+  letter-spacing: var(--tracking-tight);
+}
+
+.accent-text {
+  font-family: var(--font-accent);
+  font-weight: var(--font-weight-regular);
+}
+
+body,
+p {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+}
+
+code {
+  font-family: var(--font-mono);
+  font-weight: var(--font-weight-medium);
 }
