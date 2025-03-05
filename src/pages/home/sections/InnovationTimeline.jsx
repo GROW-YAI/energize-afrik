@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import TimelineImage2022 from "../../../assets/images/innovator.jpg"; // You'll need to add these images
-import TimelineImage2023 from "../../../assets/images/innovator.jpg";
+import TimelineImage2022 from "../../../assets/images/story2.webp"; // You'll need to add these images
+import TimelineImage2023 from "../../../assets/images/story1.webp";
 import TimelineImage2024 from "../../../assets/images/innovator.jpg";
 import TimelineImage2025 from "../../../assets/images/innovator.jpg";
 
@@ -53,7 +53,7 @@ const InnovationTimeline = ({ shouldShow }) => {
   return (
     <div className="mb-24 relative" ref={timelineRef}>
       <motion.h3
-        className="text-4xl font-bold text-center text-gray-900 mb-16"
+        className="text-4xl font-bold text-center text-gray-700 mb-16"
         initial={{ opacity: 0, y: 20 }}
         animate={shouldShow ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ delay: 0.3 }}
@@ -161,7 +161,7 @@ const InnovationTimeline = ({ shouldShow }) => {
                     }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <h4 className="text-xl font-bold text-gray-900 mb-3">
+                    <h4 className="text-xl font-bold text-gray-800 mb-3">
                       {milestone.title}
                     </h4>
                     <p className="text-gray-600 leading-relaxed">

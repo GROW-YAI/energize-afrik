@@ -215,9 +215,9 @@ const AboutInnovator = () => {
             transition={{ type: "spring", stiffness: 300 }}
           >
             <div className="absolute -right-8 -top-8 w-16 h-16 bg-amber-400/20 rounded-full"></div>
-            <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-6">
+            <div className="w-12 h-12  rounded-xl flex items-center justify-center mb-6">
               <svg
-                className="w-6 h-6 text-amber-600"
+                className="w-10 h-10 text-amber-600"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -245,9 +245,9 @@ const AboutInnovator = () => {
             transition={{ type: "spring", stiffness: 300 }}
           >
             <div className="absolute -right-8 -top-8 w-16 h-16 bg-sky-400/20 rounded-full"></div>
-            <div className="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center mb-6">
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6">
               <svg
-                className="w-6 h-6 text-sky-600"
+                className="w-10 h-10 text-sky-600"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -271,13 +271,12 @@ const AboutInnovator = () => {
 
           <motion.div
             className="bg-gradient-to-br from-white to-emerald-50 p-8 rounded-2xl shadow-lg overflow-hidden relative border border-emerald-100"
-            whileHover={{ y: -10 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            transition={{ stiffness: 300 }}
           >
             <div className="absolute -right-8 -top-8 w-16 h-16 bg-emerald-400/20 rounded-full"></div>
-            <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6">
               <svg
-                className="w-6 h-6 text-emerald-600"
+                className="w-10 h-10 text-emerald-600"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -318,11 +317,11 @@ const AboutInnovator = () => {
           </div>
 
           <div className="relative z-10 max-w-3xl mx-auto text-center">
-            <p className="text-2xl md:text-3xl font-medium text-white mb-8 italic">
+            <small className="text-2xl md:text-3xl font-medium text-white mb-8 italic">
               "Solar energy isn't just about technology—it's about empowering
               rural communities to overcome barriers to development and create
               their own sustainable future."
-            </p>
+            </small>
             <div className="flex items-center justify-center">
               <span className="w-12 h-1 bg-white rounded-full mr-3"></span>
               <p className="text-white font-semibold">Prince</p>
