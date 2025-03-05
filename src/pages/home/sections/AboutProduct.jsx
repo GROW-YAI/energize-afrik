@@ -131,75 +131,6 @@ const AboutProduct = () => {
   return (
     <div className="bg-gray-950" ref={containerRef}>
       {/* Hero Section */}
-      <motion.section
-        className="py-10 flex flex-col items-center justify-center relative overflow-hidden"
-        style={{ opacity: heroOpacity, scale: heroScale }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-amber-900/20 to-gray-950 z-0"></div>
-
-        {/* Dynamic background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,_rgba(255,170,0,0.08)_0%,_rgba(0,0,0,0)_70%)]"></div>
-          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_70%,_rgba(0,112,243,0.08)_0%,_rgba(0,0,0,0)_70%)]"></div>
-        </div>
-
-        <div className="w-full md:w-4/5 mx-auto px-4 z-10 text-center">
-          <motion.h1
-            className="text-5xl md:text-7xl font-bold tracking-tight text-amber-50 mb-3"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-          >
-            Solar Power Bank
-          </motion.h1>
-
-          <motion.p
-            className="text-xl md:text-2xl text-amber-300/70 max-w-2xl mx-auto mb-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-          >
-            Empowering rural Ghana, one ray at a time.
-          </motion.p>
-
-          <motion.div
-            className="relative w-full max-w-xl mx-auto"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-          >
-            <img
-              src={newImg}
-              alt="Solar Power Bank for Rural Ghana"
-              className="w-full h-auto object-cover rounded-3xl shadow-2xl"
-            />
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-transparent to-amber-500/20"></div>
-          </motion.div>
-
-          <motion.button
-            className="mt-12 text-gray-950 text-lg font-medium bg-amber-400 px-6 py-3 rounded-full hover:bg-amber-300 transition-colors"
-            onClick={() => setShowDetails(true)}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2 }}
-          >
-            Discover
-            <svg
-              className="w-5 h-5 inline-block ml-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </motion.button>
-        </div>
-      </motion.section>
 
       {/* Details Section */}
       <section ref={detailsRef} className="bg-gray-950 pt-20 pb-24 relative">
@@ -210,8 +141,8 @@ const AboutProduct = () => {
 
         <div className="w-full md:w-4/5 mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-amber-50 mb-16 text-center">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-200 to-amber-400">
+            <h2 className="text-5xl font-bold text-amber-50 mb-16 text-center">
+              <span className="bg-clip-text text-amber-400">
                 Innovation for rural communities
               </span>
             </h2>
@@ -226,9 +157,9 @@ const AboutProduct = () => {
                 ref={feature1Ref}
                 className="sticky top-16 h-[80vh] flex items-center justify-center mb-8"
                 style={{
-                  scale: feature1Scale,
-                  opacity: feature1Opacity,
-                  zIndex: feature1ZIndex,
+                  scale: feature2Scale,
+                  opacity: feature2Opacity,
+                  zIndex: feature2ZIndex,
                 }}
               >
                 <div className="w-full max-w-4xl mx-auto bg-gray-900 rounded-3xl overflow-hidden border border-amber-800/30 shadow-xl">
@@ -416,47 +347,55 @@ const AboutProduct = () => {
 
             {/* Environmental Impact - Interactive Counter */}
             <motion.div
-              className="mb-24 text-center"
+              className="mb-20 text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="backdrop-blur-md bg-gray-900/70 border border-green-800/30 p-10 rounded-2xl">
-                <h3 className="text-2xl font-semibold text-green-50 mb-6">
+              <div className="backdrop-blur-sm bg-gray-900/60 border border-amber-700/20 p-8 rounded-xl">
+                <h3 className="text-2xl font-semibold text-amber-50 mb-4">
                   Impact on Ghana's Future
                 </h3>
-                <p className="text-green-200/90 max-w-xl mx-auto mb-8">
+                <p className="text-amber-100/80 max-w-xl mx-auto mb-8">
                   Each Solar Power Bank prevents up to 30kg of CO₂ emissions
                   annually while providing reliable electricity to communities
                   off the national grid.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
                   <div className="text-center">
                     <motion.div
-                      className="flex items-center justify-center w-24 h-24 mx-auto rounded-full bg-gray-800/90 border border-green-800/40 shadow-lg shadow-green-900/20 mb-4"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ type: "spring", stiffness: 400 }}
+                      className="flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-gray-800 border border-amber-700/20 mb-3"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 15,
+                      }}
                     >
-                      <RiGlobalLine className="w-10 h-10 text-green-400" />
+                      <RiGlobalLine className="w-8 h-8 text-amber-400" />
                     </motion.div>
-                    <h4 className="text-xl font-medium text-green-100 mb-1">
+                    <h4 className="text-lg font-medium text-amber-50 mb-1">
                       30kg CO₂
                     </h4>
-                    <p className="text-sm text-green-400/80">
+                    <p className="text-sm text-amber-400/70">
                       Emissions reduced yearly
                     </p>
                   </div>
 
                   <div className="text-center">
                     <motion.div
-                      className="flex items-center justify-center w-24 h-24 mx-auto rounded-full bg-gray-800/90 border border-blue-800/40 shadow-lg shadow-blue-900/20 mb-4"
-                      whileHover={{ scale: 1.1, rotate: -5 }}
-                      transition={{ type: "spring", stiffness: 400 }}
+                      className="flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-gray-800 border border-amber-700/20 mb-3"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 15,
+                      }}
                     >
                       <svg
-                        className="w-10 h-10 text-blue-400"
+                        className="w-8 h-8 text-amber-400"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -469,22 +408,26 @@ const AboutProduct = () => {
                         />
                       </svg>
                     </motion.div>
-                    <h4 className="text-xl font-medium text-blue-100 mb-1">
+                    <h4 className="text-lg font-medium text-amber-50 mb-1">
                       8+ hours
                     </h4>
-                    <p className="text-sm text-blue-400/80">
+                    <p className="text-sm text-amber-400/70">
                       Device charging per day
                     </p>
                   </div>
 
                   <div className="text-center">
                     <motion.div
-                      className="flex items-center justify-center w-24 h-24 mx-auto rounded-full bg-gray-800/90 border border-amber-800/40 shadow-lg shadow-amber-900/20 mb-4"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ type: "spring", stiffness: 400 }}
+                      className="flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-gray-800 border border-amber-700/20 mb-3"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 15,
+                      }}
                     >
                       <svg
-                        className="w-10 h-10 text-amber-400"
+                        className="w-8 h-8 text-amber-400"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -497,10 +440,10 @@ const AboutProduct = () => {
                         />
                       </svg>
                     </motion.div>
-                    <h4 className="text-xl font-medium text-amber-100 mb-1">
+                    <h4 className="text-lg font-medium text-amber-50 mb-1">
                       50+ villages
                     </h4>
-                    <p className="text-sm text-amber-400/80">
+                    <p className="text-sm text-amber-400/70">
                       Across rural Ghana
                     </p>
                   </div>

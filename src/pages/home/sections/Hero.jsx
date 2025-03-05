@@ -57,22 +57,13 @@ const Hero = () => {
 
   return (
     <div className=" py-7 font-sans relative overflow-hidden bg-amber-50">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-gradient-to-br from-amber-400 to-amber-300 opacity-20 blur-3xl"></div>
-        <div className="absolute top-1/2 -left-32 w-64 h-64 rounded-full bg-gradient-to-tr from-amber-500 to-amber-400 opacity-20 blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 right-0  bg-gradient-to-t from-amber-500 to-amber-300 opacity-10"></div>
-
-        {/* Animated Sun Rays */}
-        <div className="absolute top-1/4 right-1/4">
-          <div className="w-64 h-64 rounded-full bg-amber-400 opacity-5 animate-pulse"></div>
-        </div>
-      </div>
-
       {/* Hero Section */}
       <div className="container mx-auto px-6 py-26 flex flex-col lg:flex-row items-center relative z-10">
         {/* Left Content */}
-        <div className="lg:w-1/2 lg:pr-16 mb-10 lg:mb-0">
+        <div className="lg:w-1/2 lg:pr-16 mb-10 lg:mb-0 flex flex-col space-y-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-700 leading-tight mb-4">
+            <span className="">Solar Power Bank</span>
+          </h1>{" "}
           <AnimatePresence mode="wait">
             <motion.div
               key={activeSlide}
@@ -81,47 +72,39 @@ const Hero = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
+              <h1 className="text-4xl md:text-6xl font-bold text-amber-600 leading-tight mb-4">
                 {carouselItems[activeSlide].title}
                 <br />
-                <span className="text-amber-600">Solar Power Bank</span>
               </h1>
-
-              <p className="text-gray-600 mb-8 max-w-md">
-                {carouselItems[activeSlide].description}. Empowering rural
-                Ghana.
-              </p>
             </motion.div>
           </AnimatePresence>
-
           <div className="flex gap-4 mb-12">
             <a
               href={COMPANY_DATA.storeFrontLink}
               target="_blank"
-              className="bg-gradient-to-r from-amber-500 to-amber-400 shadow-lg hover:shadow-xl text-white font-medium px-8 py-3 rounded-full transition duration-300 transform hover:-translate-y-1"
+              className=" bg-amber-500 hover:bg-amber-600   hover:shadow-md text-white font-medium px-8 py-3 rounded-full transition duration-300 transform "
             >
               Order Now
             </a>
             <a
               href="#contact"
-              className="bg-white shadow-lg hover:shadow-xl text-amber-700 font-medium px-8 py-3 rounded-full transition duration-300 transform hover:-translate-y-1"
+              className="bg-transparent hover:shadow-md border border-amber-700 text-amber-700 font-medium px-8 py-3 rounded-full transition duration-300 transform "
             >
               Partner With Us
             </a>
           </div>
-
           {/* Stats */}
-          <div className="bg-white bg-opacity-90 backdrop-blur-sm rounded-3xl p-6 grid grid-cols-3 gap-8 shadow-xl">
+          <div className="bg-transparent rounded-3xl p-6 grid grid-cols-3 gap-8 shadow-sm">
             <div className="text-center">
-              <h3 className="font-bold text-3xl text-amber-600">10,000+</h3>
+              <h3 className="font-bold text-xl text-amber-600">10,000+</h3>
               <p className="text-gray-500 mt-1">mAh</p>
             </div>
             <div className="text-center">
-              <h3 className="font-bold text-3xl text-amber-600">8+</h3>
+              <h3 className="font-bold text-xl text-amber-600">8+</h3>
               <p className="text-gray-500 mt-1">Hours</p>
             </div>
             <div className="text-center">
-              <h3 className="font-bold text-3xl text-amber-600">50+</h3>
+              <h3 className="font-bold text-xl text-amber-600">50+</h3>
               <p className="text-gray-500 mt-1">Villages</p>
             </div>
           </div>
@@ -129,7 +112,7 @@ const Hero = () => {
 
         {/* Right Content - Image Carousel */}
         <div className="w-full lg:w-1/2 relative">
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gray-900 aspect-[3/2] mx-auto ">
+          <div className="relative rounded-3xl overflow-hidden  bg-gray-900 aspect-[3/2] mx-auto ">
             {/* Carousel */}
             <div className="h-full relative">
               <AnimatePresence mode="wait">
@@ -147,11 +130,7 @@ const Hero = () => {
                     className="w-full h-full object-fit"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent">
-                    <div className="absolute bottom-8 left-8 text-white">
-                      <div className="p-3 rounded-full bg-amber-500 mb-4 inline-block">
-                        {carouselItems[activeSlide].icon}
-                      </div>
-                    </div>
+                    <div className="absolute bottom-8 left-8 text-white"></div>
                   </div>
                 </motion.div>
               </AnimatePresence>
@@ -187,10 +166,6 @@ const Hero = () => {
               </button>
             </div>
           </div>
-
-          {/* Floating Elements */}
-          <div className="absolute -z-10 top-1/4 -right-12 w-32 h-32 rounded-full bg-amber-100 opacity-80 animate-float"></div>
-          <div className="absolute -z-10 -bottom-8 -left-8 w-24 h-24 rounded-full bg-amber-200 opacity-50 animate-float-delayed"></div>
         </div>
       </div>
     </div>

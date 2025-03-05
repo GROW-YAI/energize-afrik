@@ -125,9 +125,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <a href="/" className="flex items-center space-x-2">
-              <div className="bg-amber-500 text-white p-2 rounded-full">
-                <FaSun />
-              </div>
+              <img src="/favicon.ico" alt="logo" />
               <span className="font-bold text-xl text-gray-800">
                 EnergizAfriq
               </span>

@@ -53,7 +53,7 @@ const InnovationTimeline = ({ shouldShow }) => {
   return (
     <div className="mb-24 relative" ref={timelineRef}>
       <motion.h3
-        className="text-3xl font-bold text-center text-gray-900 mb-16"
+        className="text-4xl font-bold text-center text-gray-900 mb-16"
         initial={{ opacity: 0, y: 20 }}
         animate={shouldShow ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ delay: 0.3 }}
@@ -63,12 +63,12 @@ const InnovationTimeline = ({ shouldShow }) => {
 
       <div className="relative max-w-6xl mx-auto px-4">
         {/* Animated timeline progress line */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200 rounded-full overflow-hidden">
+        {/* <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200 rounded-full overflow-hidden">
           <motion.div
             className="absolute top-0 left-0 right-0 bg-amber-400 rounded-full"
             style={{ height: lineProgress + "%" }}
           />
-        </div>
+        </div> */}
 
         <div className="space-y-32">
           {milestones.map((milestone, index) => {
@@ -104,22 +104,22 @@ const InnovationTimeline = ({ shouldShow }) => {
                   }
                   transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
                 >
-                  <div className="bg-amber-500 text-white px-3 py-1.5 rounded-md font-bold shadow-md">
+                  <div className="bg-amber-500 text-white px-3 py-1.5 rounded-full font-bold shadow-md">
                     {milestone.year}
                   </div>
                 </motion.div>
 
                 {/* Timeline dot */}
-                <motion.div
+                {/* <motion.div
                   className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-amber-400 z-10"
                   initial={{ scale: 0 }}
                   animate={isInView ? { scale: 1 } : { scale: 0 }}
                   transition={{ delay: 0.3, type: "spring" }}
-                />
+                /> */}
 
                 {/* Image */}
                 <motion.div
-                  className="w-full md:w-5/12 overflow-hidden rounded-lg shadow-md"
+                  className="w-full md:w-5/12 overflow-hidden rounded-3xl shadow-md"
                   initial={{ x: index % 2 === 0 ? -50 : 50, opacity: 0 }}
                   animate={
                     isInView
@@ -154,7 +154,7 @@ const InnovationTimeline = ({ shouldShow }) => {
                   transition={{ delay: 0.5, duration: 0.6 }}
                 >
                   <motion.div
-                    className="bg-white p-6 rounded-lg shadow-md border-l-4 border-amber-400 w-full"
+                    className="bg-white p-6 rounded-3xl shadow-md  w-full"
                     whileHover={{
                       y: -5,
                       boxShadow: "0 15px 30px -10px rgba(0, 0, 0, 0.15)",
@@ -173,7 +173,7 @@ const InnovationTimeline = ({ shouldShow }) => {
                       }`}
                     >
                       <motion.button
-                        className="px-4 py-2 text-sm bg-amber-100 text-amber-700 rounded-md font-medium flex items-center gap-2"
+                        className="px-4 py-2 text-sm bg-amber-100 text-amber-700 rounded-full font-medium flex items-center gap-2"
                         whileHover={{
                           scale: 1.03,
                           backgroundColor: "rgba(251,191,36,0.2)",

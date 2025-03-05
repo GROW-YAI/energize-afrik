@@ -26,7 +26,7 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="py-10 bg-gradient-to-b from-amber-50 to-white overflow-hidden">
+    <section className="pb-20 bg-gradient-to-b from-amber-50 to-white overflow-hidden">
       <div className="container mx-auto px-6">
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
@@ -43,7 +43,7 @@ const Features = () => {
               }}
               className="group"
             >
-              <div className="relative bg-white rounded-3xl p-8 shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="relative bg-transparent rounded-3xl p-8 shadow-sm hover:shadow-md transition-all duration-300">
                 {/* Decorative element */}
                 <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-amber-100 opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
 
@@ -51,13 +51,13 @@ const Features = () => {
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  className="bg-amber-100 text-amber-700 p-4 rounded-2xl inline-flex mb-6"
+                  className="0 text-amber-900 rounded-2xl inline-flex mb-6"
                 >
-                  <span className="text-2xl">{feature.icon}</span>
+                  <span className="text-4xl">{feature.icon}</span>
                 </motion.div>
 
                 {/* Content */}
-                <h3 className="text-xl font-medium text-gray-900 mb-2">
+                <h3 className="text-xl font-medium text-gray-700 mb-2">
                   {feature.title}
                 </h3>
                 <p className="text-gray-600">{feature.description}</p>

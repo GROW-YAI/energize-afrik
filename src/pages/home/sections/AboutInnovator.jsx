@@ -90,14 +90,6 @@ const AboutInnovator = () => {
         }}
       >
         <div className="text-center mb-16">
-          <motion.span
-            className="inline-block px-4 py-1 rounded-full bg-amber-100 text-amber-800 text-sm font-medium mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={shouldShow ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 0.1 }}
-          >
-            Solar Innovation
-          </motion.span>
           <motion.h2
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
             initial={{ opacity: 0, y: 20 }}
@@ -130,7 +122,7 @@ const AboutInnovator = () => {
               <img
                 src={Innovator}
                 alt="Prince - Solar Innovator"
-                className="w-full h-auto object-cover"
+                className="w-full h-[400px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent z-10"></div>
               <div className="absolute bottom-0 left-0 w-full p-6 z-20">
@@ -143,9 +135,6 @@ const AboutInnovator = () => {
                 </p>
               </div>
             </div>
-
-            <div className="absolute -top-6 -left-6 w-full h-full bg-amber-400/30 rounded-2xl -z-10"></div>
-            <div className="absolute -bottom-6 -right-6 w-full h-full bg-blue-400/20 rounded-2xl -z-20"></div>
           </motion.div>
 
           <motion.div
@@ -154,7 +143,7 @@ const AboutInnovator = () => {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="flex flex-col justify-center"
           >
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">
+            <h3 className="text-3xl font-bold text-gray-700 mb-6">
               Pioneering Rural Energy Solutions
             </h3>
             <p className="text-gray-700 mb-6 leading-relaxed">
@@ -173,83 +162,38 @@ const AboutInnovator = () => {
             <div className="flex flex-wrap gap-4">
               <motion.button
                 onClick={() => openModal("vision")}
-                className="flex items-center gap-3 bg-white border border-gray-200 rounded-full pl-2 pr-5 py-2 shadow-sm"
+                className="flex items-center text-gray-700 gap-3 bg-transparent border cursor-pointer border-gray-200 rounded-full px-4 py-2"
                 whileHover={{
-                  scale: 1.05,
+                  scale: 1.0,
                   backgroundColor: "rgba(251,191,36,0.1)",
                 }}
-                transition={{ type: "spring", stiffness: 400 }}
+                transition={{ stiffness: 400 }}
               >
-                <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center">
-                  <svg
-                    className="w-4 h-4 text-amber-600"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                    />
-                  </svg>
-                </div>
-                <span className="text-gray-800 font-medium">Vision</span>
+                Vision
               </motion.button>
 
               <motion.button
-                onClick={() => openModal("technology")}
-                className="flex items-center gap-3 bg-white border border-gray-200 rounded-full pl-2 pr-5 py-2 shadow-sm"
+                onClick={() => openModal("vision")}
+                className="flex items-center gap-3 text-gray-700 bg-transparent border cursor-pointer border-gray-200 rounded-full px-4 py-2"
                 whileHover={{
-                  scale: 1.05,
-                  backgroundColor: "rgba(14,165,233,0.1)",
+                  scale: 1.0,
+                  backgroundColor: "rgba(251,191,36,0.1)",
                 }}
-                transition={{ type: "spring", stiffness: 400 }}
+                transition={{ stiffness: 400 }}
               >
-                <div className="w-8 h-8 bg-sky-100 rounded-full flex items-center justify-center">
-                  <svg
-                    className="w-4 h-4 text-sky-600"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
-                    />
-                  </svg>
-                </div>
-                <span className="text-gray-800 font-medium">Technology</span>
+                Technology
               </motion.button>
 
               <motion.button
-                onClick={() => openModal("impact")}
-                className="flex items-center gap-3 bg-white border border-gray-200 rounded-full pl-2 pr-5 py-2 shadow-sm"
+                onClick={() => openModal("vision")}
+                className="flex items-center gap-3 text-gray-700 bg-transparent border cursor-pointer border-gray-200 rounded-full px-4 py-2"
                 whileHover={{
-                  scale: 1.05,
-                  backgroundColor: "rgba(5,150,105,0.1)",
+                  scale: 1.0,
+                  backgroundColor: "rgba(251,191,36,0.1)",
                 }}
-                transition={{ type: "spring", stiffness: 400 }}
+                transition={{ stiffness: 400 }}
               >
-                <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
-                  <svg
-                    className="w-4 h-4 text-emerald-600"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </div>
-                <span className="text-gray-800 font-medium">Impact</span>
+                Impact
               </motion.button>
             </div>
           </motion.div>
