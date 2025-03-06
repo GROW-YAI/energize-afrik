@@ -9,8 +9,8 @@ import {
 
 import newImg from "../../../assets/images/hero1.avif";
 
-import Img1 from "../../../assets/images/showcase3.webp";
-import Img2 from "../../../assets/images/showcase1.webp";
+import Img1 from "../../../assets/images/showcase1.webp";
+import Img2 from "../../../assets/images/showcase3.webp";
 import Img3 from "../../../assets/images/showcase2.webp";
 import { COMPANY_DATA } from "../../../constants/placeholder";
 
@@ -24,37 +24,37 @@ const AboutProduct = () => {
     {
       title: "Weather-Resistant Design",
       description:
-        "Engineered to withstand Ghana's diverse climate conditions from intense sun in the north to heavy rains in the forest regions, ensuring reliable performance year-round.",
+        "Engineered for Ghana's climate, ensuring year-round reliability.",
       icon: <RiShieldLine className="w-8 h-8" />,
       image: Img1,
       specs: [
         { label: "Waterproof Rating", value: "IPX6" },
         { label: "Operating Temperature", value: "-10°C to 60°C" },
-        { label: "Material", value: "Reinforced Polymer" },
+        { label: "Material", value: "Refined and polished plywood" },
       ],
     },
     {
       title: "Advanced Solar Technology",
       description:
-        "High-efficiency photovoltaic cells optimized for Ghana's abundant sunshine, delivering consistent power to rural communities without access to the national grid.",
+        "Optimized solar cells ensure reliable power for off-grid rural communities.",
       icon: <RiSunLine className="w-8 h-8" />,
       image: Img2,
       specs: [
-        { label: "Solar Panel", value: "5W" },
+        { label: "Solar Panel", value: "330W" },
         { label: "Conversion Rate", value: "24.3%" },
-        { label: "Charging Time", value: "6-8 hrs (full sun)" },
+        { label: "Charging Time", value: "4-5 hrs (full sun)" },
       ],
     },
     {
       title: "Ultra Portable",
       description:
-        "Lightweight yet powerful design that farmers can easily transport between home and field, powering essential tools and irrigation systems wherever needed.",
+        "Lightweight and portable, providing power for farmers' tools and irrigation.",
       icon: <RiDeviceLine className="w-8 h-8" />,
       image: Img3,
       specs: [
-        { label: "Weight", value: "288g" },
-        { label: "Dimensions", value: "147 × 71 × 17 mm" },
-        { label: "Capacity", value: "10,000 mAh" },
+        { label: "Weight", value: "18kg" },
+        { label: "Dimensions", value: "30 × 28 × 17 mm" },
+        { label: "Capacity", value: "166,000 mAh" },
       ],
     },
   ];
@@ -139,7 +139,7 @@ const AboutProduct = () => {
           <div className="absolute w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4wOCI+PHBhdGggZD0iTTM2IDM0djJoLTJ2LTJoMnptMC00aDJ2MmgtMnYtMnptLTQgMnYyaC0ydi0yaDJ6bTIgMGgydjJoLTJ2LTJ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-50"></div>
         </div>
 
-        <div className="w-full md:w-4/5 mx-auto px-4 relative z-10">
+        <div className="w-full md:w-4/5 mx-auto  relative z-10">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-5xl font-bold text-amber-50 mb-16 text-center">
               <span className="bg-clip-text text-amber-400">
@@ -441,7 +441,7 @@ const AboutProduct = () => {
                       </svg>
                     </motion.div>
                     <h4 className="text-lg font-medium text-amber-50 mb-1">
-                      50+ villages
+                      10+ villages
                     </h4>
                     <p className="text-sm text-amber-400/70">
                       Across rural Ghana
@@ -476,7 +476,7 @@ const AboutProduct = () => {
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Order Now — ₵750
+                  Order Now — from ₵2,500
                 </motion.a>
               </motion.div>
 

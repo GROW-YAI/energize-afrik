@@ -1,4 +1,4 @@
-import Logo from "../assets/images/energy.jpg";
+import Logo from "/favicon.ico";
 import { FaInfoCircle } from "react-icons/fa";
 import { MdOutlineWork } from "react-icons/md";
 import { MdOutlineExplore } from "react-icons/md";
@@ -9,14 +9,14 @@ import { MdFlight } from "react-icons/md";
 
 export const COMPANY_DATA = {
   services: [{ title: "", description: "" }],
-  name: "Energize Afrik",
-  storeFrontLink: "https://paystack.com",
+  name: "EnergizAfriq",
+  storeFrontLink: "https://paystack.shop/energizafriq-solar-banks",
   logo: Logo,
-  phones: ["+233(0)244885739"],
-  emails: ["support@energizeafrik.com"],
+  phones: ["+233(0) 59 166 8341"],
+  emails: ["asumaduprinceagyare@gmail.com"],
   addresses: [
     {
-      name: "8, Layi Oyekanmi Street, Mushin, Lagos State, Nigeria",
+      name: "Bodomase, Sekyere Kumawu, Ashanti Region, Ghana",
       lat: 0,
       lng: 0,
     },

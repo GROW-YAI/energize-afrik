@@ -23,9 +23,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <div className="bg-yellow-400 p-2 rounded-lg shadow-lg">
-                <SunIcon className="h-8 w-8 text-gray-900" />
-              </div>
+              <img src="/favicon.ico" alt="logo" />
               <h2 className="text-2xl font-bold">{COMPANY_DATA.name}</h2>
             </div>
             <p className="text-gray-300 max-w-md leading-relaxed">
@@ -118,47 +116,11 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-gray-700">
+        <div className="mt-16 pt-8 border-t flex justify-center align-middle border-gray-700">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-gray-400">
               © 2025 {COMPANY_DATA.name}. All rights reserved.
             </p>
-            <div className="mt-6 md:mt-0">
-              <ul className="flex flex-wrap gap-6 text-sm text-gray-400">
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-yellow-400 transition-colors duration-300"
-                  >
-                    Partners
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-yellow-400 transition-colors duration-300"
-                  >
-                    Sustainability
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-yellow-400 transition-colors duration-300"
-                  >
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-yellow-400 transition-colors duration-300"
-                  >
-                    Terms of Service
-                  </a>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>

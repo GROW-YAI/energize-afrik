@@ -96,7 +96,7 @@ const Hero = () => {
           {/* Stats */}
           <div className="bg-transparent rounded-3xl p-6 grid grid-cols-3 gap-8 shadow-sm">
             <div className="text-center">
-              <h3 className="font-bold text-xl text-amber-600">10,000+</h3>
+              <h3 className="font-bold text-xl text-amber-600">160,000+</h3>
               <p className="text-gray-500 mt-1">mAh</p>
             </div>
             <div className="text-center">

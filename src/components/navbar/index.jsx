@@ -1,6 +1,7 @@
 // Navbar.jsx
 import React, { useState, useEffect } from "react";
 import { FaSun, FaBars, FaTimes } from "react-icons/fa";
+import { COMPANY_DATA } from "../../constants/placeholder";
 
 const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -145,7 +146,7 @@ const Navbar = () => {
               />
               <NavLink href="#contact" label="Contact" section="contact" />
               <a
-                href="https://paystack.com"
+                href={COMPANY_DATA.storeFrontLink}
                 target="_blank"
                 className="bg-amber-500 text-white px-4 py-2 rounded-full hover:bg-amber-600 transition-colors"
               >

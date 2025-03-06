@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { COMPANY_DATA } from "../../../constants/placeholder";
 import { motion } from "framer-motion";
 import {
   RiMailLine,
@@ -138,7 +139,7 @@ const MinimalistContact = () => {
             <div className="relative">
               <div className="h-full w-full">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63391.95321852482!2d-0.9852811743164016!3d6.719332899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdb6c3b0a17ecb7%3A0x7db4ca5d8ed585fa!2sBodomase!5e0!3m2!1sen!2sgh!4v1709414889371!5m2!1sen!2sgh"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5601.671218665893!2d-1.2582292003850373!3d6.893030718035626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdbd9b6a5e5851b%3A0x8b08f1086992dea6!2sBodomase!5e0!3m2!1sen!2sgh!4v1741265233116!5m2!1sen!2sgh"
                   className="w-full h-full min-h-[300px] md:min-h-full"
                   style={{ border: 0 }}
                   allowFullScreen=""
@@ -154,19 +155,21 @@ const MinimalistContact = () => {
                   <div className="flex items-center">
                     <RiMapPinLine className="text-amber-600 mr-3" />
                     <span className="text-sm font-light">
-                      Bodomase, Ashanti Region, Ghana
+                      {COMPANY_DATA.addresses[0].name}
                     </span>
                   </div>
 
                   <div className="flex items-center">
                     <RiPhoneLine className="text-amber-600 mr-3" />
-                    <span className="text-sm font-light">+233 20 123 4567</span>
+                    <span className="text-sm font-light">
+                      {COMPANY_DATA.phones[0]}
+                    </span>
                   </div>
 
                   <div className="flex items-center">
                     <RiMailLine className="text-amber-600 mr-3" />
                     <span className="text-sm font-light">
-                      contact@solarpowerbank.com.gh
+                      {COMPANY_DATA.emails[0]}
                     </span>
                   </div>
                 </div>
