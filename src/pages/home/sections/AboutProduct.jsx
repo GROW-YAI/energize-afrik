@@ -25,7 +25,7 @@ const AboutProduct = () => {
       title: "Weather-Resistant Design",
       description:
         "Engineered for Ghana's climate, ensuring year-round reliability.",
-      icon: <RiShieldLine className="w-8 h-8" />,
+      // icon: <RiShieldLine className="w-8 h-8" />,
       image: Img1,
       specs: [
         { label: "Waterproof Rating", value: "IPX6" },
@@ -37,8 +37,8 @@ const AboutProduct = () => {
       title: "Advanced Solar Technology",
       description:
         "Optimized solar cells ensure reliable power for off-grid rural communities.",
-      icon: <RiSunLine className="w-8 h-8" />,
-      image: Img2,
+      // icon: <RiSunLine className="w-8 h-8" />,
+      image: Img3,
       specs: [
         { label: "Solar Panel", value: "330W" },
         { label: "Conversion Rate", value: "24.3%" },
@@ -49,7 +49,7 @@ const AboutProduct = () => {
       title: "Ultra Portable",
       description:
         "Lightweight and portable, providing power for farmers' tools and irrigation.",
-      icon: <RiDeviceLine className="w-8 h-8" />,
+      // icon: <RiDeviceLine className="w-8 h-8" />,
       image: Img3,
       specs: [
         { label: "Weight", value: "18kg" },
@@ -165,9 +165,6 @@ const AboutProduct = () => {
                 <div className="w-full max-w-4xl mx-auto bg-gray-900 rounded-3xl overflow-hidden border border-amber-800/30 shadow-xl">
                   <div className="grid md:grid-cols-2 items-center">
                     <div className="p-8 md:p-12">
-                      <div className="w-16 h-16 mb-6 rounded-xl bg-amber-900/40 border border-amber-700/50 flex items-center justify-center">
-                        {features[0].icon}
-                      </div>
                       <h3 className="text-3xl font-bold text-amber-50 mb-4">
                         {features[0].title}
                       </h3>
@@ -222,9 +219,6 @@ const AboutProduct = () => {
                 <div className="w-full max-w-4xl mx-auto bg-gray-900 rounded-3xl overflow-hidden border border-blue-800/30 shadow-xl">
                   <div className="grid md:grid-cols-2 items-center">
                     <div className="p-8 md:p-12">
-                      <div className="w-16 h-16 mb-6 rounded-xl bg-blue-900/40 border border-blue-700/50 flex items-center justify-center">
-                        {features[1].icon}
-                      </div>
                       <h3 className="text-3xl font-bold text-blue-50 mb-4">
                         {features[1].title}
                       </h3>
@@ -279,9 +273,6 @@ const AboutProduct = () => {
                 <div className="w-full max-w-4xl mx-auto bg-gray-900 rounded-3xl overflow-hidden border border-emerald-800/30 shadow-xl">
                   <div className="grid md:grid-cols-2 items-center">
                     <div className="p-8 md:p-12">
-                      <div className="w-16 h-16 mb-6 rounded-xl bg-emerald-900/40 border border-emerald-700/50 flex items-center justify-center">
-                        {features[2].icon}
-                      </div>
                       <h3 className="text-3xl font-bold text-emerald-50 mb-4">
                         {features[2].title}
                       </h3>

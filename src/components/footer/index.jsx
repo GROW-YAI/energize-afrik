@@ -64,25 +64,21 @@ const Footer = () => {
             </h3>
             <ul className="space-y-4">
               <li className="flex items-center space-x-3 group">
-                <SunIcon className="h-4 w-4 text-yellow-400 transition-transform duration-300 group-hover:rotate-90" />
                 <span className="text-gray-300 group-hover:text-yellow-400 transition-colors duration-300">
                   Portable Solar Power Banks
                 </span>
               </li>
               <li className="flex items-center space-x-3 group">
-                <LeafIcon className="h-4 w-4 text-yellow-400 transition-transform duration-300 group-hover:rotate-90" />
                 <span className="text-gray-300 group-hover:text-yellow-400 transition-colors duration-300">
                   Solar-Powered Irrigation Systems
                 </span>
               </li>
               <li className="flex items-center space-x-3 group">
-                <SunIcon className="h-4 w-4 text-yellow-400 transition-transform duration-300 group-hover:rotate-90" />
                 <span className="text-gray-300 group-hover:text-yellow-400 transition-colors duration-300">
                   Home Solar Solutions
                 </span>
               </li>
               <li className="flex items-center space-x-3 group">
-                <LeafIcon className="h-4 w-4 text-yellow-400 transition-transform duration-300 group-hover:rotate-90" />
                 <span className="text-gray-300 group-hover:text-yellow-400 transition-colors duration-300">
                   Agricultural Energy Systems
                 </span>
@@ -119,7 +115,11 @@ const Footer = () => {
         <div className="mt-16 pt-8 border-t flex justify-center align-middle border-gray-700">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-gray-400">
-              © 2025 {COMPANY_DATA.name}. All rights reserved.
+              © 2025{" "}
+              <a href="/" className="text-yellow-400">
+                {COMPANY_DATA.name}
+              </a>
+              . All rights reserved.
             </p>
           </div>
         </div>

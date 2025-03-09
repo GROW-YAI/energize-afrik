@@ -9,7 +9,7 @@ import Hero2 from "./sections/Hero2";
 const Home = () => {
   return (
     <div>
-      <div id="hero" className="mt-8">
+      <div id="hero">
         <Hero />
         {/* <Hero2 /> */}
       </div>
@@ -22,7 +22,7 @@ const Home = () => {
       <div id="about-innovator">
         <AboutInnovator />
       </div>
-
+      {/* <Products /> */}
       <div id="contact">
         <Contact />
       </div>

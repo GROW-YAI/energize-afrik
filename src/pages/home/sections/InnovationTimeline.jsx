@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import TimelineImage2022 from "../../../assets/images/story2.webp"; // You'll need to add these images
+import TimelineImage2022 from "../../../assets/images/story2.webp";
 import TimelineImage2023 from "../../../assets/images/story1.webp";
 import TimelineImage2024 from "../../../assets/images/innovator.jpg";
 import TimelineImage2025 from "../../../assets/images/innovator.jpg";
@@ -21,7 +21,7 @@ const milestones = [
     description:
       "Developed plans for larger solar stations to power cars and heavy equipment, with prototype testing in selected villages.",
     image: TimelineImage2023,
-    color: "amber",
+    color: "blue",
   },
   {
     year: "2024",
@@ -29,7 +29,7 @@ const milestones = [
     description:
       "Launched training programs for local technicians to maintain and repair solar systems, creating sustainable job opportunities.",
     image: TimelineImage2024,
-    color: "amber",
+    color: "emerald",
   },
   {
     year: "2025",
@@ -37,11 +37,11 @@ const milestones = [
     description:
       "Expanding to neighboring regions with improved solar technology and establishing partnerships with government agencies.",
     image: TimelineImage2025,
-    color: "amber",
+    color: "purple",
   },
 ];
 
-const InnovationTimeline = ({ shouldShow }) => {
+const InnovationTimeline = ({ shouldShow, onOpenModal }) => {
   const timelineRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: timelineRef,
@@ -53,7 +53,7 @@ const InnovationTimeline = ({ shouldShow }) => {
   return (
     <div className="mb-24 relative" ref={timelineRef}>
       <motion.h3
-        className="text-4xl font-bold text-center text-gray-700 mb-16"
+        className="text-4xl font-bold text-center text-white mb-16"
         initial={{ opacity: 0, y: 20 }}
         animate={shouldShow ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ delay: 0.3 }}
@@ -63,12 +63,12 @@ const InnovationTimeline = ({ shouldShow }) => {
 
       <div className="relative max-w-6xl mx-auto px-4">
         {/* Animated timeline progress line */}
-        {/* <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200 rounded-full overflow-hidden">
+        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-800/60 rounded-full overflow-hidden">
           <motion.div
-            className="absolute top-0 left-0 right-0 bg-amber-400 rounded-full"
+            className="absolute top-0 left-0 right-0 bg-amber-500/80 rounded-full"
             style={{ height: lineProgress + "%" }}
           />
-        </div> */}
+        </div>
 
         <div className="space-y-32">
           {milestones.map((milestone, index) => {
@@ -77,6 +77,69 @@ const InnovationTimeline = ({ shouldShow }) => {
               once: false,
               amount: 0.3,
             });
+
+            // Choose color based on milestone color
+            const getColor = () => {
+              switch (milestone.color) {
+                case "amber":
+                  return {
+                    bg: "from-amber-900/30 to-gray-900/60",
+                    border: "border-amber-700/30",
+                    iconBg: "bg-amber-900/40",
+                    iconBorder: "border-amber-700/50",
+                    btnBg: "bg-amber-900/40",
+                    btnHover: "hover:bg-amber-800/60",
+                    btnBorder: "border-amber-700/40",
+                    btnText: "text-amber-400",
+                  };
+                case "blue":
+                  return {
+                    bg: "from-blue-900/30 to-gray-900/60",
+                    border: "border-blue-700/30",
+                    iconBg: "bg-blue-900/40",
+                    iconBorder: "border-blue-700/50",
+                    btnBg: "bg-blue-900/40",
+                    btnHover: "hover:bg-blue-800/60",
+                    btnBorder: "border-blue-700/40",
+                    btnText: "text-blue-400",
+                  };
+                case "emerald":
+                  return {
+                    bg: "from-emerald-900/30 to-gray-900/60",
+                    border: "border-emerald-700/30",
+                    iconBg: "bg-emerald-900/40",
+                    iconBorder: "border-emerald-700/50",
+                    btnBg: "bg-emerald-900/40",
+                    btnHover: "hover:bg-emerald-800/60",
+                    btnBorder: "border-emerald-700/40",
+                    btnText: "text-emerald-400",
+                  };
+                case "purple":
+                  return {
+                    bg: "from-purple-900/30 to-gray-900/60",
+                    border: "border-purple-700/30",
+                    iconBg: "bg-purple-900/40",
+                    iconBorder: "border-purple-700/50",
+                    btnBg: "bg-purple-900/40",
+                    btnHover: "hover:bg-purple-800/60",
+                    btnBorder: "border-purple-700/40",
+                    btnText: "text-purple-400",
+                  };
+                default:
+                  return {
+                    bg: "from-amber-900/30 to-gray-900/60",
+                    border: "border-amber-700/30",
+                    iconBg: "bg-amber-900/40",
+                    iconBorder: "border-amber-700/50",
+                    btnBg: "bg-amber-900/40",
+                    btnHover: "hover:bg-amber-800/60",
+                    btnBorder: "border-amber-700/40",
+                    btnText: "text-amber-400",
+                  };
+              }
+            };
+
+            const colors = getColor();
 
             return (
               <motion.div
@@ -89,12 +152,12 @@ const InnovationTimeline = ({ shouldShow }) => {
                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                {/* Year marker - positioned to the side of content rather than on the timeline */}
+                {/* Year marker */}
                 <motion.div
-                  className={`absolute z-10 ${
+                  className={`absolute z-20 ${
                     index % 2 === 0
-                      ? "md:left-[calc(50%-5rem)]"
-                      : "md:right-[calc(50%-5rem)]"
+                      ? "md:left-[calc(50%-4.5rem)]"
+                      : "md:right-[calc(50%-4.5rem)]"
                   } top-0 md:top-8`}
                   initial={{ scale: 0, opacity: 0 }}
                   animate={
@@ -104,22 +167,14 @@ const InnovationTimeline = ({ shouldShow }) => {
                   }
                   transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
                 >
-                  <div className="bg-amber-500 text-white px-3 py-1.5 rounded-full font-bold shadow-md">
+                  <div className="bg-amber-500 text-gray-900 px-4 py-2 rounded-full font-bold shadow-lg">
                     {milestone.year}
                   </div>
                 </motion.div>
 
-                {/* Timeline dot */}
-                {/* <motion.div
-                  className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-amber-400 z-10"
-                  initial={{ scale: 0 }}
-                  animate={isInView ? { scale: 1 } : { scale: 0 }}
-                  transition={{ delay: 0.3, type: "spring" }}
-                /> */}
-
                 {/* Image */}
                 <motion.div
-                  className="w-full md:w-5/12 overflow-hidden rounded-3xl shadow-md"
+                  className="w-full md:w-5/12 overflow-hidden rounded-3xl shadow-xl border border-white/10"
                   initial={{ x: index % 2 === 0 ? -50 : 50, opacity: 0 }}
                   animate={
                     isInView
@@ -138,7 +193,7 @@ const InnovationTimeline = ({ shouldShow }) => {
                       alt={`${milestone.year} - ${milestone.title}`}
                       className="absolute inset-0 w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent"></div>
                   </motion.div>
                 </motion.div>
 
@@ -154,17 +209,17 @@ const InnovationTimeline = ({ shouldShow }) => {
                   transition={{ delay: 0.5, duration: 0.6 }}
                 >
                   <motion.div
-                    className="bg-white p-6 rounded-3xl shadow-md  w-full"
+                    className={`backdrop-blur-xl bg-gradient-to-br ${colors.bg} p-6 rounded-3xl shadow-xl border ${colors.border} w-full`}
                     whileHover={{
                       y: -5,
-                      boxShadow: "0 15px 30px -10px rgba(0, 0, 0, 0.15)",
+                      boxShadow: "0 15px 30px -10px rgba(0, 0, 0, 0.3)",
                     }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <h4 className="text-xl font-bold text-gray-800 mb-3">
+                    <h4 className="text-xl font-bold text-white mb-3">
                       {milestone.title}
                     </h4>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-white/70 leading-relaxed">
                       {milestone.description}
                     </p>
                     <div
@@ -173,11 +228,9 @@ const InnovationTimeline = ({ shouldShow }) => {
                       }`}
                     >
                       <motion.button
-                        className="px-4 py-2 text-sm bg-amber-100 text-amber-700 rounded-full font-medium flex items-center gap-2"
-                        whileHover={{
-                          scale: 1.03,
-                          backgroundColor: "rgba(251,191,36,0.2)",
-                        }}
+                        onClick={() => onOpenModal(milestone.year)}
+                        className={`px-4 py-2 text-sm ${colors.btnBg} ${colors.btnText} rounded-full font-medium flex items-center gap-2 border ${colors.btnBorder} ${colors.btnHover} transition-all duration-300`}
+                        whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
                         <span>Learn more</span>
