@@ -13,6 +13,8 @@ import {
   RiPlugLine,
 } from "react-icons/ri";
 
+import Swal from "sweetalert2";
+
 // Floating animations component
 const FloatingAnimations = () => (
   <style jsx global>{`
@@ -109,26 +111,53 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    try {
+      const response = await fetch("https://formspree.io/f/myzegarl", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formState),
+      });
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
+      if (response.ok) {
+        Swal.fire({
+          icon: "success",
+          title: "Message Sent!",
+          text: "Your message has been sent successfully. We will get back to you soon.",
+          confirmButtonColor: "#CD7F32",
+        });
 
-      // Reset form after success
-      setTimeout(() => {
-        setSubmitSuccess(false);
+        // Reset form after successful submission
         setFormState({
           name: "",
           email: "",
-          subject: "",
+          phone: "",
           message: "",
+          subject: "",
         });
-      }, 3000);
-    }, 1500);
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Failed to send message. Please try again later.",
+          confirmButtonColor: "#CD7F32",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      Swal.fire({
+        icon: "error",
+        title: "Network Error",
+        text: "An error occurred. Please check your internet connection and try again.",
+        confirmButtonColor: "#CD7F32",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -136,8 +165,6 @@ const Contact = () => {
       className="py-24 relative overflow-hidden bg-gray-950"
       id="contact"
     >
-      {/* <FloatingAnimations /> */}
-
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950"></div>
