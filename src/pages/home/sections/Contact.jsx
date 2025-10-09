@@ -7,10 +7,6 @@ import {
   RiMapPinLine,
   RiArrowRightLine,
   RiCheckLine,
-  RiSendPlaneLine,
-  RiSunLine,
-  RiLightbulbFlashLine,
-  RiPlugLine,
 } from "react-icons/ri";
 
 import Swal from "sweetalert2";
@@ -89,6 +85,33 @@ const FloatingAnimations = () => (
         transform: rotate(360deg);
       }
     }
+
+    /* Mobile-specific adjustments */
+    @media (max-width: 640px) {
+      .mobile-padding {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      
+      .mobile-text-size {
+        font-size: 1.75rem;
+      }
+      
+      .mobile-card-padding {
+        padding: 1.5rem;
+      }
+      
+      .mobile-grid-gap {
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .tablet-padding {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+    }
   `}</style>
 );
 
@@ -162,7 +185,7 @@ const Contact = () => {
 
   return (
     <section
-      className="py-24 relative overflow-hidden bg-gray-950"
+      className="py-12 md:py-16 lg:py-24 relative overflow-hidden bg-gray-950"
       id="contact"
     >
       {/* Background elements */}
@@ -170,108 +193,107 @@ const Contact = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950"></div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section heading */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
           <div className="inline-block">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4 mobile-text-size">
               Get In Touch
             </h2>
+            <p className="text-white/70 text-sm sm:text-base max-w-2xl mx-auto px-4">
+              Ready to power your community with sustainable solar energy? Contact us today.
+            </p>
           </div>
         </motion.div>
 
         {/* Solar-power theme floating stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 md:mb-12 lg:mb-16 mobile-grid-gap">
           <motion.div
-            className="backdrop-blur-md bg-gray-900/40 border border-white/10 rounded-2xl p-6 relative overflow-hidden"
+            className="backdrop-blur-md bg-gray-900/40 border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 relative overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
             whileHover={{ y: -5 }}
           >
-            <div className="absolute top-0 right-0 w-20 h-20 bg-amber-500/10 rounded-full blur-xl -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 bg-amber-500/10 rounded-full blur-xl -translate-y-1/2 translate-x-1/2"></div>
             <div className="relative z-10">
-              <h3 className="text-xl font-bold text-white mb-2">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
                 Solar Expertise
               </h3>
-              <p className="text-white/70">
-                Consult with our team of engineers specialized in rural solar
-                solutions.
+              <p className="text-white/70 text-sm sm:text-base">
+                Consult with our team of engineers specialized in rural solar solutions.
               </p>
             </div>
           </motion.div>
 
           <motion.div
-            className="backdrop-blur-md bg-gray-900/40 border border-white/10 rounded-2xl p-6 relative overflow-hidden"
+            className="backdrop-blur-md bg-gray-900/40 border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 relative overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
             whileHover={{ y: -5 }}
           >
-            <div className="absolute top-0 right-0 w-20 h-20 bg-blue-500/10 rounded-full blur-xl -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 bg-blue-500/10 rounded-full blur-xl -translate-y-1/2 translate-x-1/2"></div>
             <div className="relative z-10">
-              <h3 className="text-xl font-bold text-white mb-2">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
                 Customized Solutions
               </h3>
-              <p className="text-white/70">
-                Tailored energy plans designed specifically for your community's
-                needs.
+              <p className="text-white/70 text-sm sm:text-base">
+                Tailored energy plans designed specifically for your community's needs.
               </p>
             </div>
           </motion.div>
 
           <motion.div
-            className="backdrop-blur-md bg-gray-900/40 border border-white/10 rounded-2xl p-6 relative overflow-hidden"
+            className="backdrop-blur-md bg-gray-900/40 border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 relative overflow-hidden sm:col-span-2 lg:col-span-1"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
             whileHover={{ y: -5 }}
           >
-            <div className="absolute top-0 right-0 w-20 h-20 bg-emerald-500/10 rounded-full blur-xl -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 bg-emerald-500/10 rounded-full blur-xl -translate-y-1/2 translate-x-1/2"></div>
             <div className="relative z-10">
-              <h3 className="text-xl font-bold text-white mb-2">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
                 Ongoing Support
               </h3>
-              <p className="text-white/70">
-                Continuous technical assistance and maintenance for all
-                installations.
+              <p className="text-white/70 text-sm sm:text-base">
+                Continuous technical assistance and maintenance for all installations.
               </p>
             </div>
           </motion.div>
         </div>
 
         <motion.div
-          className="grid md:grid-cols-5 gap-8 relative"
+          className="flex flex-col lg:grid lg:grid-cols-5 gap-6 md:gap-8 relative"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           {/* Left: Contact form with solar-inspired design */}
-          <div className="md:col-span-3 backdrop-blur-xl bg-gradient-to-br from-gray-900/80 via-gray-900/60 to-gray-800/60 rounded-3xl overflow-hidden shadow-2xl border border-white/10 relative">
+          <div className="lg:col-span-3 backdrop-blur-xl bg-gradient-to-br from-gray-900/80 via-gray-900/60 to-gray-800/60 rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl border border-white/10 relative order-2 lg:order-1">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500"></div>
             <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-amber-500/5 blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-              <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-blue-500/5 blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+              <div className="absolute top-0 right-0 w-64 h-64 lg:w-96 lg:h-96 rounded-full bg-amber-500/5 blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+              <div className="absolute bottom-0 left-0 w-56 h-56 lg:w-80 lg:h-80 rounded-full bg-blue-500/5 blur-3xl translate-y-1/2 -translate-x-1/2"></div>
             </div>
 
-            <div className="p-8 md:p-10 relative z-10">
-              <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
-                {/* <span className="inline-block w-8 h-8 bg-amber-500 rounded-full mr-3"></span> */}
+            <div className="p-4 sm:p-6 md:p-8 lg:p-10 relative z-10 mobile-card-padding">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center">
                 Send Us a Message
               </h3>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label className="block text-white/70 text-sm mb-2">
                       Your Name
@@ -282,7 +304,7 @@ const Contact = () => {
                       name="name"
                       value={formState.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-black/20 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-transparent placeholder-white/30 text-white"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-black/20 border border-white/10 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-transparent placeholder-white/30 text-white text-sm sm:text-base"
                       placeholder="Enter your name"
                       required
                     />
@@ -298,7 +320,7 @@ const Contact = () => {
                       name="email"
                       value={formState.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-black/20 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-transparent placeholder-white/30 text-white"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-black/20 border border-white/10 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-transparent placeholder-white/30 text-white text-sm sm:text-base"
                       placeholder="Enter your email"
                       required
                     />
@@ -315,7 +337,7 @@ const Contact = () => {
                     name="subject"
                     value={formState.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-black/20 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-transparent placeholder-white/30 text-white"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-black/20 border border-white/10 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-transparent placeholder-white/30 text-white text-sm sm:text-base"
                     placeholder="What is this regarding?"
                     required
                   />
@@ -331,7 +353,7 @@ const Contact = () => {
                     value={formState.message}
                     onChange={handleChange}
                     rows="4"
-                    className="w-full px-4 py-3 bg-black/20 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-transparent placeholder-white/30 text-white resize-none"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-black/20 border border-white/10 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-transparent placeholder-white/30 text-white text-sm sm:text-base resize-none"
                     placeholder="Tell us about your project or inquiry"
                     required
                   ></textarea>
@@ -340,7 +362,7 @@ const Contact = () => {
                 <div>
                   <button
                     type="submit"
-                    className="group flex items-center justify-center bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-medium px-6 py-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-amber-500/20 disabled:opacity-70 disabled:hover:from-amber-500 disabled:hover:to-amber-600 min-w-[160px]"
+                    className="group w-full sm:w-auto flex items-center justify-center bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-medium px-6 py-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-amber-500/20 disabled:opacity-70 disabled:hover:from-amber-500 disabled:hover:to-amber-600 min-w-[160px] text-sm sm:text-base"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
@@ -362,62 +384,61 @@ const Contact = () => {
           </div>
 
           {/* Right: Map and contact info */}
-          <div className="md:col-span-2 relative">
+          <div className="lg:col-span-2 relative order-1 lg:order-2">
             {/* Contact info card */}
             <motion.div
-              className="backdrop-blur-xl bg-gradient-to-br from-gray-900/80 via-gray-900/60 to-gray-800/60 rounded-3xl overflow-hidden shadow-2xl border border-white/10 mb-8 relative"
+              className="backdrop-blur-xl bg-gradient-to-br from-gray-900/80 via-gray-900/60 to-gray-800/60 rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl border border-white/10 mb-6 md:mb-8 relative"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-blue-400 to-blue-500"></div>
-              <div className="p-8 relative">
-                <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
-                  {/* <span className="inline-block w-8 h-8 bg-blue-500 rounded-full mr-3"></span> */}
+              <div className="p-4 sm:p-6 md:p-8 relative mobile-card-padding">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center">
                   Contact Information
                 </h3>
 
-                <div className="space-y-5">
+                <div className="space-y-4 sm:space-y-5">
                   <div className="flex items-start">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-black/30 border border-white/10 mr-4 flex-shrink-0">
-                      <RiMapPinLine className="text-blue-400" />
+                    <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-black/30 border border-white/10 mr-3 sm:mr-4 flex-shrink-0">
+                      <RiMapPinLine className="text-blue-400 text-sm sm:text-base" />
                     </div>
                     <div>
-                      <p className="text-white/60 text-sm">
+                      <p className="text-white/60 text-xs sm:text-sm">
                         {COMPANY_DATA.addresses[0].name}
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-black/30 border border-white/10 mr-4 flex-shrink-0">
-                      <RiPhoneLine className="text-blue-400" />
+                    <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-black/30 border border-white/10 mr-3 sm:mr-4 flex-shrink-0">
+                      <RiPhoneLine className="text-blue-400 text-sm sm:text-base" />
                     </div>
                     <div>
-                      <p className="text-white/60 text-sm">
+                      <p className="text-white/60 text-xs sm:text-sm">
                         {COMPANY_DATA.phones[0]}
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-black/30 border border-white/10 mr-4 flex-shrink-0">
-                      <RiMailLine className="text-blue-400" />
+                    <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-black/30 border border-white/10 mr-3 sm:mr-4 flex-shrink-0">
+                      <RiMailLine className="text-blue-400 text-sm sm:text-base" />
                     </div>
                     <div>
-                      <p className="text-white/60 text-sm">
+                      <p className="text-white/60 text-xs sm:text-sm">
                         {COMPANY_DATA.emails[0]}
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <div className="mt-8 pt-8 border-t border-white/10">
-                  <h4 className="text-white/90 font-medium mb-3">
+                <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-white/10">
+                  <h4 className="text-white/90 font-medium mb-3 text-sm sm:text-base">
                     Business Hours
                   </h4>
-                  <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                  <div className="grid grid-cols-2 gap-x-3 sm:gap-x-4 gap-y-1 sm:gap-y-2 text-xs sm:text-sm">
                     <div className="text-white/60">Monday - Friday:</div>
                     <div className="text-white/90">8:00 AM - 5:00 PM</div>
                     <div className="text-white/60">Saturday:</div>
@@ -431,7 +452,7 @@ const Contact = () => {
 
             {/* Map */}
             <motion.div
-              className="h-[300px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative"
+              className="h-[200px] sm:h-[250px] md:h-[300px] rounded-xl lg:rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
