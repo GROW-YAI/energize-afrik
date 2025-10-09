@@ -78,6 +78,15 @@ const FloatingAnimations = () => (
         transform: translateY(8px) translateX(-8px);
       }
     }
+
+    /* Mobile optimizations */
+    @media (max-width: 640px) {
+      .float-slow,
+      .float-medium,
+      .float-fast {
+        animation-duration: 20s;
+      }
+    }
   `}</style>
 );
 
@@ -114,7 +123,7 @@ const FeatureCard = ({ feature, index }) => {
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: "-50px" }}
       transition={{
         duration: 0.7,
         delay: feature.delay,
@@ -122,31 +131,31 @@ const FeatureCard = ({ feature, index }) => {
       }}
       className="group"
     >
-      <div className="relative backdrop-blur-xl bg-gray-900/50 border border-white/10 rounded-3xl p-8 shadow-xl transition-all duration-500 hover:shadow-2xl hover:translate-y-[-5px] overflow-hidden">
+      <div className="relative backdrop-blur-xl bg-gray-900/50 border border-white/10 rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl transition-all duration-500 hover:shadow-2xl hover:translate-y-[-5px] overflow-hidden h-full">
         {/* Background glow elements */}
         <div
-          className={`absolute bottom-0 left-0 w-40 h-40 rounded-full ${colors.glowDark} blur-3xl opacity-40 float-slow`}
+          className={`absolute bottom-0 left-0 w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-full ${colors.glowDark} blur-3xl opacity-40 float-slow`}
         ></div>
         <div
-          className={`absolute top-0 right-0 w-20 h-20 rounded-full ${colors.glowLight} blur-2xl opacity-30 float-medium`}
+          className={`absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 rounded-full ${colors.glowLight} blur-2xl opacity-30 float-medium`}
         ></div>
 
         {/* Inner content container */}
-        <div className={`relative z-10  pl-4 transition-colors duration-300`}>
+        <div className={`relative z-10 transition-colors duration-300`}>
           {/* Icon with floating animation */}
           <motion.div
             whileHover={{ scale: 1.1, rotate: 5 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            className={`${colors.icon} rounded-2xl inline-flex mb-6`}
+            className={`${colors.icon} rounded-2xl inline-flex mb-4 sm:mb-6`}
           >
-            <span className="text-5xl">{feature.icon}</span>
+            <span className="text-4xl sm:text-5xl">{feature.icon}</span>
           </motion.div>
 
           {/* Content with hover effects */}
-          <h3 className="text-2xl font-medium text-white mb-3 group-hover:text-white/90 transition-colors">
+          <h3 className="text-xl sm:text-2xl font-medium text-white mb-2 sm:mb-3 group-hover:text-white/90 transition-colors">
             {feature.title}
           </h3>
-          <p className="text-white/70 group-hover:text-white/80 transition-colors">
+          <p className="text-white/70 group-hover:text-white/80 transition-colors text-sm sm:text-base leading-relaxed">
             {feature.description}
           </p>
         </div>
@@ -159,41 +168,41 @@ const Features = () => {
   return (
     <section
       id="about-product"
-      className="py-24 bg-gray-900 relative overflow-hidden"
+      className="py-12 sm:py-16 lg:py-24 bg-gray-900 relative overflow-hidden"
     >
       <FloatingAnimations />
 
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 z-0"></div>
-        <div className="absolute top-1/4 left-1/6 w-96 h-96 rounded-full bg-amber-500/5 blur-3xl float-slow"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-blue-500/5 blur-3xl float-medium"></div>
-        <div className="absolute top-2/3 left-1/3 w-72 h-72 rounded-full bg-purple-500/5 blur-3xl float-fast"></div>
+        <div className="absolute top-1/4 left-1/6 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 rounded-full bg-amber-500/5 blur-3xl float-slow"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-40 h-40 sm:w-56 sm:h-56 lg:w-80 lg:h-80 rounded-full bg-blue-500/5 blur-3xl float-medium"></div>
+        <div className="absolute top-2/3 left-1/3 w-36 h-36 sm:w-48 sm:h-48 lg:w-72 lg:h-72 rounded-full bg-purple-500/5 blur-3xl float-fast"></div>
 
         {/* Subtle grid pattern */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMwLTkuOTQtOC4wNi0xOC0xOC0xOEg0djRoMTRDMjYuMDcgNCAzNiAxMy45MyAzNiAyNFYzNmg0VjE4eiIgZmlsbD0id2hpdGUiIGZpbGwtb3BhY2l0eT0iMC4wMyIvPjwvZz48L3N2Zz4=')] opacity-5"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
             Powerful <span className="text-amber-400">Features</span>
           </h2>
-          <p className="text-white/70 max-w-2xl mx-auto text-lg">
+          <p className="text-white/70 max-w-2xl mx-auto text-base sm:text-lg px-4 sm:px-0">
             Our solar power banks combine cutting-edge technology with practical
             design to deliver reliable energy wherever you need it.
           </p>
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 relative">
           {features.map((feature, index) => (
             <FeatureCard key={index} feature={feature} index={index} />
           ))}
@@ -205,25 +214,25 @@ const Features = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-20 relative"
+          className="mt-12 sm:mt-16 lg:mt-20 relative"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-amber-600/20 to-amber-400/20 rounded-3xl backdrop-blur-xl border border-amber-500/20"></div>
 
-          <div className="relative overflow-hidden backdrop-blur-xl bg-gray-900/30 rounded-3xl p-10 text-white shadow-2xl border border-white/10">
+          <div className="relative overflow-hidden backdrop-blur-xl bg-gray-900/30 rounded-3xl p-6 sm:p-8 lg:p-10 text-white shadow-2xl border border-white/10">
             {/* Background glow element */}
-            <div className="absolute -bottom-10 right-10 w-60 h-60 rounded-full bg-amber-500/30 blur-3xl opacity-40"></div>
+            <div className="absolute -bottom-10 right-10 w-40 h-40 sm:w-52 sm:h-52 lg:w-60 lg:h-60 rounded-full bg-amber-500/30 blur-3xl opacity-40"></div>
 
-            <div className="flex flex-col md:flex-row items-center relative z-10">
-              <div className="md:w-1/4 flex justify-center mb-8 md:mb-0">
-                <div className="p-6 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 shadow-lg shadow-amber-500/20">
-                  <FaSun className="text-6xl text-white" />
+            <div className="flex flex-col lg:flex-row items-center relative z-10">
+              <div className="lg:w-1/4 flex justify-center mb-6 lg:mb-0">
+                <div className="p-4 sm:p-6 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 shadow-lg shadow-amber-500/20">
+                  <FaSun className="text-4xl sm:text-5xl lg:text-6xl text-white" />
                 </div>
               </div>
-              <div className="md:w-3/4 md:pl-8">
-                <h3 className="text-3xl font-bold mb-4">
+              <div className="lg:w-3/4 lg:pl-8 text-center lg:text-left">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
                   Solar Powered Freedom
                 </h3>
-                <p className="mb-6 text-white/80 text-lg">
+                <p className="mb-4 sm:mb-6 text-white/80 text-sm sm:text-base lg:text-lg leading-relaxed">
                   Our power banks harness the sun's energy with high-efficiency
                   solar panels, providing reliable charging even in remote
                   locations without access to electricity. Perfect for outdoor
@@ -231,16 +240,16 @@ const Features = () => {
                   limited power infrastructure.
                 </p>
 
-                <div className="flex flex-wrap gap-4 mb-6">
-                  <div className="flex items-center bg-white/10 px-4 py-2 rounded-full">
+                <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 mb-4 sm:mb-6">
+                  <div className="flex items-center bg-white/10 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm">
                     <div className="h-2 w-2 rounded-full bg-amber-400 mr-2"></div>
                     <span>Eco-friendly</span>
                   </div>
-                  <div className="flex items-center bg-white/10 px-4 py-2 rounded-full">
+                  <div className="flex items-center bg-white/10 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm">
                     <div className="h-2 w-2 rounded-full bg-amber-400 mr-2"></div>
                     <span>Sustainable energy</span>
                   </div>
-                  <div className="flex items-center bg-white/10 px-4 py-2 rounded-full">
+                  <div className="flex items-center bg-white/10 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm">
                     <div className="h-2 w-2 rounded-full bg-amber-400 mr-2"></div>
                     <span>Off-grid charging</span>
                   </div>
@@ -251,11 +260,11 @@ const Features = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ x: 5 }}
-                  className="inline-flex items-center bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 px-6 py-3 rounded-full text-white font-medium transition-all duration-300 shadow-lg hover:shadow-amber-500/30 border border-white/10"
+                  className="inline-flex items-center bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 px-4 sm:px-6 py-2 sm:py-3 rounded-full text-white font-medium transition-all duration-300 shadow-lg hover:shadow-amber-500/30 border border-white/10 text-sm sm:text-base"
                 >
                   Explore Solar Power Banks
                   <svg
-                    className="w-5 h-5 ml-2"
+                    className="w-4 h-4 sm:w-5 sm:h-5 ml-2"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
