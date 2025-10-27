@@ -104,7 +104,7 @@ const Hero = () => {
     },
     {
       title: "Ghana's Sun",
-      description: "Harnessing abundant natural energy",
+      description: "Harnessing the abundant natural energy",
       image: HeroImage3,
       icon: <FaSun />,
     },
