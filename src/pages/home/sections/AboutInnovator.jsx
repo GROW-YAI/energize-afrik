@@ -526,13 +526,13 @@ const AboutInnovator = () => {
                     </div>
                   </div>
 
-                  <div className="rounded-lg sm:rounded-xl overflow-hidden border border-white/10 mt-4 md:mt-0">
+                  {/* <div className="rounded-lg sm:rounded-xl overflow-hidden border border-white/10 mt-4 md:mt-0">
                     <img
                       src={timelineModalContent[activeTimelineModal].image}
                       alt={timelineModalContent[activeTimelineModal].title}
                       className="w-full h-48 sm:h-56 lg:h-64 object-cover"
                     />
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="mt-4 sm:mt-6 flex justify-end">

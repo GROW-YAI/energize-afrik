@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { COMPANY_DATA } from "../../../constants/placeholder";
-import HeroImage1 from "../../../assets/images/hero1.avif";
+import HeroImage1 from "../../../assets/images/hero1.webp";
 import HeroImage2 from "../../../assets/images/hero2.avif";
 import HeroImage3 from "../../../assets/images/hero3.avif";
 

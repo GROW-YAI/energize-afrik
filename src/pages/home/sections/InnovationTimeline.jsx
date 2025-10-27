@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import TimelineImage2022 from "../../../assets/images/story2.webp";
 import TimelineImage2023 from "../../../assets/images/story1.webp";
-import TimelineImage2024 from "../../../assets/images/innovator.jpg";
+import TimelineImage2024 from "../../../assets/images/story3.jpg";
 import TimelineImage2025 from "../../../assets/images/innovator.jpg";
 
 // Updated timeline data with images for 2022-2025

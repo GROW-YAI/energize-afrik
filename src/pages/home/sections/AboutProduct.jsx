@@ -7,10 +7,10 @@ import {
   RiGlobalLine,
 } from "react-icons/ri";
 
-import newImg from "../../../assets/images/hero1.avif";
+
 
 import Img1 from "../../../assets/images/showcase1.webp";
-import Img2 from "../../../assets/images/showcase3.webp";
+
 import Img3 from "../../../assets/images/showcase2.webp";
 import { COMPANY_DATA } from "../../../constants/placeholder";
 
