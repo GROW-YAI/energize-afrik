@@ -10,7 +10,7 @@ import { MdFlight } from "react-icons/md";
 export const COMPANY_DATA = {
   services: [{ title: "", description: "" }],
   name: "EnergizAfriq",
-  storeFrontLink: "https://paystack.shop/energizafriq-solar-banks",
+  storeFrontLink: "https://paystack.shop/energiz-afriq",
   logo: Logo,
   phones: ["+233(0) 59 166 8341"],
   emails: ["asumaduprinceagyare@gmail.com"],
@@ -22,7 +22,7 @@ export const COMPANY_DATA = {
     },
   ],
   shortAbout:
-    "Empowering rural communities with sustainable solar solutions for homes and agriculture in Ghana and beyond.",
+    "Empowering rural communities, new sites, farmers and areas not connected to the national grid with sustainable solar solutions for homes and agriculture in Ghana and beyond.",
   longAbout: "",
   CLIENTELE: [
     { name: "", company: "", position: "", comment: "" },

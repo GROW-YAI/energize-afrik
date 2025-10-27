@@ -8,9 +8,9 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 import { COMPANY_DATA } from "../../../constants/placeholder";
-import HeroImage1 from "../../../assets/images/hero1.avif";
-import HeroImage2 from "../../../assets/images/hero2.avif";
-import HeroImage3 from "../../../assets/images/hero3.avif";
+import HeroImage1 from "../../../assets/images/hero3.webp";
+import HeroImage2 from "../../../assets/images/hero2.webp";
+import HeroImage3 from "../../../assets/images/hero1.webp";
 
 // Styles
 const styles = {
